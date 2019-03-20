@@ -1,7 +1,7 @@
 // Programmer: Joseph __Vitale 
 // Start Date: 03/15/19
 // Completion Date: n/A 
-// Description: This project will be able to display current time, set relay on/off 
+// Discription: This project will be able to display current time, set relay on/off 
 // time, the use of pots and buttons to navigate around the OLED display and set
 // time to use for a timer.
 
