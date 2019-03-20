@@ -1,8 +1,9 @@
 // Programmer: Joseph __Vitale 
 // Start Date: 03/15/19
 // Completion Date: n/A 
-// Description: Timmer; This project will be able to display current time, set relay on/off
-// time, the use of pots and buttons to navagate around the OLED display/set time and timmer. 
+// Description: This project will be able to display current time, set relay on/off 
+// time, the use of pots and buttons to navigate around the OLED display and set
+// time to use for a timer.
 
 #include <Arduino.h>            // Teensy is Arduino Based
 #include <U8g2lib.h>            // OLED
