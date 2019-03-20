@@ -6,6 +6,16 @@ Discription: This project will be able to display current time, set relay on/off
 
 Explantion of each funtion:
 
-void setup();
-void OLED(int potvalue); 
-int getpot(); 
+OLED driver:
+U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
+
+
+* void setup();
+    Setup is the initialization of devices. 
+        U8g2.begin(); : Starts the code that will initialize the display.
+
+* void OLED(int potvalue); 
+    Creating a function for the display using Library u8g2. This function has one Parameter that is being passed in that is an int, I'm passing a value of potvalue which is grabbed from the return int value in function getpot. The value potvalue is then printed on the OLED screen which looks like the following "Pot Value" Value "%".
+
+* int getpot(); 
+    This function is to read an analog pin on the Teensy. I picked A0 to start with, because it is the first analog pin on the Teensy - this is pin 14. I then map the values from 0-1023 on the pot to 0-100, this is something I will use later. With every change in 1% will be a change in setting the time in the RTC. 

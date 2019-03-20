@@ -36,7 +36,6 @@ return (0);
 //******************************************Setup*****************************//
 void setup() {
   u8g2.begin();        // Start the Library code for the OLED
-  Serial.begin(38400); // Sets the data rate in bits per second (baud) 
 } // Close Void Setup
 //******************************************Setup*****************************//
 //*****************************************Functions**************************//
