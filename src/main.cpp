@@ -13,17 +13,18 @@
 // Function prototyping
 //*****************************************Declare*****************************//
 //******************************************Main******************************//
-Potentiometerread Potentiometerobject;
+
 int main()
 {
+  Potentiometer PotentiometerO;
   intdisplay();
   displaytime();
   
   while (true)
   {
     
-    Potentiometerobject.getpot();
-    OLED(getpot());
+    PotentiometerO.getpot();
+    OLED(PotentiometerO.getpot());
   }
   return (0);
 }
