@@ -17,17 +17,17 @@
 int main()
 {
   Potentiometer PotentiometerO;
-  intdisplay();
+  OLED OLEDO;
+  OLEDO.intdisplay();
   displaytime();
-  
+
   while (true)
   {
-    
     PotentiometerO.getpot();
-    OLED(PotentiometerO.getpot());
+    OLEDO.OLEDdraw(PotentiometerO.getpot());
   }
   return (0);
-}
+} // end int main
 //******************************************Main******************************//
 //******************************************Setup*****************************//
 
