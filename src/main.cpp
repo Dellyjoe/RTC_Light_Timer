@@ -6,23 +6,23 @@
 // time to use for a timer.
 
 #include <Arduino.h>
-#include <Potentiometer.h>
+#include <potentiometer.h>
 #include <OLED.h>
 #include <rtc.h>
-
 //*****************************************Declare*****************************//
 // Function prototyping
-
 //*****************************************Declare*****************************//
 //******************************************Main******************************//
+Potentiometerread Potentiometerobject;
 int main()
 {
   intdisplay();
   displaytime();
-
+  
   while (true)
   {
-    getpot();
+    
+    Potentiometerobject.getpot();
     OLED(getpot());
   }
   return (0);
