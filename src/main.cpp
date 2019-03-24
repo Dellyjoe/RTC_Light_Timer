@@ -9,6 +9,7 @@
 #include <potentiometer.h>
 #include <OLED.h>
 #include <rtc.h>
+#include <LED.h>
 //*****************************************Declare*****************************//
 // Function prototyping
 //*****************************************Declare*****************************//
@@ -20,9 +21,11 @@ int main()
   OLED OLEDO;
   OLEDO.intdisplay();
   displaytime();
+  ledblink();
 
   while (true)
   {
+
     PotentiometerO.getpot();
     OLEDO.OLEDdraw(PotentiometerO.getpot());
   }
@@ -30,5 +33,4 @@ int main()
 } // end int main
 //******************************************Main******************************//
 //******************************************Setup*****************************//
-
 //******************************************Setup*****************************//
