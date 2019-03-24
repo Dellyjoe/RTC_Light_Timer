@@ -3,7 +3,19 @@ Author: Joseph Vitale
 
 Discription: This project will be able to display current time, set relay on/off time, the use of pots and buttons to navigate around the OLED display and set time to use for a timer.
 
+*Functionality:
+    Display current time on OLED
+    Display Timmer set time on OLED
+    Have the ability to navagate through the OLED with a press of a button, with hold ability
+    Being able to set current time and current timmer time with use of button
+    When timmer setpoint = time throw relay to turn on a LED light for 12 hours
 
+*Hardware:
+    One or three pots to set timmer setpoint
+    One OLED - smaller the better
+    One Microcontroller 
+    one button
+    
 Explantion of each funtion:
 
 OLED driver:
