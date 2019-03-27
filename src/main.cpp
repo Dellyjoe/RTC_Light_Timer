@@ -24,7 +24,7 @@ int main()
   OLEDO.intdisplay();
   displaytime();
   ledblink();
-  timer();
+  timer(); // Will this allow while loop to run?
 
   while (true)
   {
