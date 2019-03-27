@@ -5,10 +5,15 @@ Author: Joseph Vitale
 Discription: This project will be able to display current time, set relay on/off time, the use of pots and buttons to navigate around the OLED display and set time to use for a timer.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Look into using the #include "Ticker.h" and getting the basic function working. You truly don't need an RTC to make this project work. It would be more simple to just use this Ticker.h. You would set current ticker value to 12 hours and display that on the OLED. Still give functionality of being able to use buttons, pots etc... Ticker.h Could be used with the RTC function. When RTC == a set time then it triggers timer x1 code. Ticker.h uses FTM1 and FTM2 timers.
 
 =======
 >>>>>>> 88741789c65fee80f8d11c4464ab5df36536ee46
+=======
+Look into using the #include "Ticker.h" and getting the basic function working. You truly don't need an RTC to make this project work. It would be more simple to just use this Ticker.h. You would set current ticker value to 12 hours and display that on the OLED. Still give functionality of being able to use buttons, pots etc... Ticker.h Could be used with the RTC function. When RTC == a set time then it triggers timer x1 code. Ticker.h. Ticker.h may not work with every analog pin. 
+
+>>>>>>> 6466d9932a5900199e3a03ed86a7c7b99d6923a2
 Functionality:
 - [ ] Display current time on OLED
 - [ ] Display Timmer set time on OLED
