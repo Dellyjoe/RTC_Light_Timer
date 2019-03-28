@@ -13,6 +13,7 @@ Look into using the #include "Ticker.h" and getting the basic function working. 
 Functionality:
 - [ ] Display current time on OLED
 - [ ] Display Timmer set time on OLED
+- [ ] Use Blink without delay funtion for relay timer
 - [ ] Have the ability to navagate through the OLED with a press of a button, with hold ability
 - [ ] Being able to set current time and current timmer time with use of button
 - [ ] When timmer setpoint = time throw relay to turn on a LED light for 12 hours
