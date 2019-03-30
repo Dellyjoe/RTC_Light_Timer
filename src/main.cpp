@@ -9,34 +9,26 @@
 #include <potentiometer.h>
 #include <OLED.h>
 #include <rtc.h>
-//#include <LED.h>
+#include <LED.h>
 #include <wire.h>
-//*****************************************Declare*****************************//
-// Function prototyping
-const int timer12 = 13;           // setting timer to ditigal pin 13 for LED example
-int replaystate = LOW;            // a state for the relay
-unsigned long previousMillis = 0; // stores last updated vaule of relay
-const long interval12 = 2000;
-void timer();
-//*****************************************Declare*****************************//
+
 //******************************************Setup*****************************//
 void setup()
 {
-  // set the digital relay pin an output
-  pinMode(timer12, OUTPUT); // setting pin 3 to an output pin
+  const int timer12 = 13;   // setting timer to ditigal pin 13 for LED example
+  pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
 } //end setup
 //******************************************Setup*****************************//
-//******************************************Main******************************//
 
+//******************************************Main******************************//
 void loop()
 {
-  setup();
+  Timer12hour Timer12hourO;
   Potentiometer PotentiometerO;
   OLED OLEDO;
   OLEDO.intdisplay();
   displaytime();
-  //ledblink();
-  timer();
+  Timer12hourO.timer();
 
   //while (true)
   //{
@@ -47,28 +39,3 @@ void loop()
 
 } // end int main
 //******************************************Main******************************//
-//*****************************************Functions**************************//
-void timer()
-{
-  //check to see if it is time to turn on the relay
-  unsigned long currentMillis = millis();
-  if ((currentMillis - previousMillis) >= interval12)
-  {
-    // save the last time you turned on the relay
-    previousMillis = currentMillis;
-
-    // if the relay is off turn it on and vice-versa:
-    if (replaystate == LOW)
-    {
-
-      replaystate = HIGH;
-    }
-    else
-    {
-
-      replaystate = LOW;
-    }
-    digitalWrite(timer12, replaystate); // setting the relay state to the realy pinout
-  }
-} // end timer
-  //*****************************************Functions**************************//

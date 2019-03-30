@@ -9,9 +9,11 @@ Look into using the #include "Ticker.h" and getting the basic function working o
 
 Ordered list on things to complete for this project, code based:
 - [x] Get LED on pin 13 to work with "blink without delay" code technique
-- [ ] Put "Blink without delay" function code into a class and separate .cpp and .h header files
-- [ ] Strip away all code that isn't necessary 
+- [x] Put "Blink without delay" function code into a class and separate .cpp and .h header files
+- [ ] Get OLDE and Pot function to display only after pot vaule has changed
+- [ ] Get OLED to not wipe whole display after displaying new pot vale
 - [ ] Get RTC working and displayed on the OLED
+- [ ] Strip away all code that isn't necessary 
 
 Functionality:
 - [ ] Display current time on OLED

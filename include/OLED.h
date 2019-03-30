@@ -4,10 +4,10 @@
 #include <Wire.h>
 #endif
 
-
 class OLED
 {
-  public:
-    void intdisplay();
-    void OLEDdraw(int potvalue);
+private:
+public:
+  void intdisplay();
+  void OLEDdraw(int potvalue);
 }; // end class OLED
