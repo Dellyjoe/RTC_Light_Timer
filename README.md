@@ -8,26 +8,25 @@ Look into using the #include "Ticker.h" and getting the basic function working o
 
 
 Ordered list on things to complete for this project, code based:
-- [ ] Get LED on pin 13 to work with "blink without delay" code technique
+- [x] Get LED on pin 13 to work with "blink without delay" code technique
 - [ ] Put "Blink without delay" function code into a class and separate .cpp and .h header files
 - [ ] Strip away all code that isn't necessary 
 - [ ] Get RTC working and displayed on the OLED
 
 Functionality:
 - [ ] Display current time on OLED
-- [ ] Display Timmer set time on OLED
-- [ ] Use Blink without delay funtion for relay timer
+- [x] Use Blink without delay funtion for relay timer
 - [ ] Have the ability to navagate through the OLED with a press of a button, with hold ability
-- [ ] Being able to set current time and current timmer time with use of button
-- [ ] When timmer setpoint = time throw relay to turn on a LED light for 12 hours
+- [ ] Being able to Display current time and timer
+- [ ] When timer setpoint = time throw relay to turn on a LED light for 12 hours
 
 Hardware:
-- [ ] One or three pots to set timmer setpoint
+- [ ] One or three pots to set timer setpoint
 - [ ] One OLED - smaller the better
 - [ ] One Microcontroller
-- [ ] one button
+- [ ] one button to set timer
 - [ ] 3v Battery
-- [ ] 5v/1A AC charger
+- [ ] 5v/1A AC charger with breadboard plug
 
 Explantion of each funtion and component:
 

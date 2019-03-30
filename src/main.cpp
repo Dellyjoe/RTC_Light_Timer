@@ -9,51 +9,50 @@
 #include <potentiometer.h>
 #include <OLED.h>
 #include <rtc.h>
-#include <LED.h>
+//#include <LED.h>
 #include <wire.h>
 //*****************************************Declare*****************************//
 // Function prototyping
-void relaypin();
-const int timer12 = 3;            // setting timer to ditigal pin 3
+const int timer12 = 13;           // setting timer to ditigal pin 13 for LED example
 int replaystate = LOW;            // a state for the relay
-unsigned long previousMillis = 0; // stores last vaule of relay
-const long interval12 = 43200;         // setting interval to 12 hours
-
+unsigned long previousMillis = 0; // stores last updated vaule of relay
+const long interval12 = 2000;
 void timer();
 //*****************************************Declare*****************************//
+//******************************************Setup*****************************//
+void setup()
+{
+  // set the digital relay pin an output
+  pinMode(timer12, OUTPUT); // setting pin 3 to an output pin
+} //end setup
+//******************************************Setup*****************************//
 //******************************************Main******************************//
 
-int main()
+void loop()
 {
+  setup();
   Potentiometer PotentiometerO;
   OLED OLEDO;
   OLEDO.intdisplay();
   displaytime();
-  ledblink();
-  timer(); // Will this allow while loop to run or will it not before the void loop will not end?
+  //ledblink();
+  timer();
 
-  while (true)
-  {
+  //while (true)
+  //{
 
-    PotentiometerO.getpot();
-    OLEDO.OLEDdraw(PotentiometerO.getpot());
-  }
-  return (0);
+  PotentiometerO.getpot();
+  OLEDO.OLEDdraw(PotentiometerO.getpot());
+  //}
+
 } // end int main
 //******************************************Main******************************//
-//******************************************Setup*****************************//
-void relaypin()
-{
-  // set the digital relay pin an output
-  pinMode(timer12, OUTPUT); // setting pin 3 to an output pin
-} //end relaypin
-//******************************************Setup*****************************//
 //*****************************************Functions**************************//
 void timer()
 {
   //check to see if it is time to turn on the relay
   unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= interval12)
+  if ((currentMillis - previousMillis) >= interval12)
   {
     // save the last time you turned on the relay
     previousMillis = currentMillis;
@@ -61,10 +60,12 @@ void timer()
     // if the relay is off turn it on and vice-versa:
     if (replaystate == LOW)
     {
+
       replaystate = HIGH;
     }
     else
     {
+
       replaystate = LOW;
     }
     digitalWrite(timer12, replaystate); // setting the relay state to the realy pinout
