@@ -9,7 +9,7 @@
 #include <potentiometer.h>
 #include <OLED.h>
 #include <rtc.h>
-#include <LED.h>
+#include <timer.h>
 #include <wire.h>
 
 //******************************************Setup*****************************//
