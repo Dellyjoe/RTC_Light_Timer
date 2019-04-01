@@ -7,7 +7,6 @@ unsigned long previousMillis = 0; // stores last updated vaule of relay
 //******************************************Setup*****************************//
 void Timer12hour::setuptimer()
 {
-  // set the digital relay pin an output
   pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
 } //end setup
 //******************************************Setup*****************************//

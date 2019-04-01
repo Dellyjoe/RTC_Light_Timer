@@ -14,22 +14,22 @@
 
 //******************************************Setup*****************************//
 void setup()
-{ //why do I have to have these here, to get the LED to blink if I have the code
-  //in timer.cpp all ready
-  const int timer12 = 13;
-  pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
+{
+  Timer12hour Timer12hourO;
+  Timer12hourO.setuptimer();
+
 } //end setup
 //******************************************Setup*****************************//
 
 //******************************************Main******************************//
 void loop()
 {
-  Timer12hour Timer12hourO;
+  Timer12hour Timer12hour1;
   Potentiometer PotentiometerO;
   OLED OLEDO;
   OLEDO.intdisplay();
   displaytime();
-  Timer12hourO.timer();
+  Timer12hour1.timer();
 
   while (true)
   {
