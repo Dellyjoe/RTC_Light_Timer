@@ -14,8 +14,9 @@
 
 //******************************************Setup*****************************//
 void setup()
-{
-  const int timer12 = 13;   // setting timer to ditigal pin 13 for LED example
+{ //why do I have to have these here, to get the LED to blink if I have the code
+  //in timer.cpp all ready
+  const int timer12 = 13;
   pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
 } //end setup
 //******************************************Setup*****************************//
@@ -30,12 +31,13 @@ void loop()
   displaytime();
   Timer12hourO.timer();
 
-  //while (true)
-  //{
+  while (true)
+  {
 
-  PotentiometerO.getpot();
-  OLEDO.OLEDdraw(PotentiometerO.getpot());
-  //}
+    PotentiometerO.getpot();
+    OLEDO.OLEDdraw(PotentiometerO.getpot());
+    break;
+  }
 
-} // end int main
+} // end void loop
 //******************************************Main******************************//
