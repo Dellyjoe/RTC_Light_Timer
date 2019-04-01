@@ -15,27 +15,28 @@
 //******************************************Setup*****************************//
 void setup()
 {
-  Timer12hour Timer12hourO;
-  Timer12hourO.setuptimer();
+  Timer12hour Timer12hour0; // Setting Object 0 for Timer12hour0
+  Timer12hour0.setuptimer();
 
+  OLED OLED0; // Setting Object 0 for OLED
+  OLED0.intdisplay();
 } //end setup
 //******************************************Setup*****************************//
 
 //******************************************Main******************************//
 void loop()
 {
-  Timer12hour Timer12hour1;
-  Potentiometer PotentiometerO;
-  OLED OLEDO;
-  OLEDO.intdisplay();
+  Timer12hour Timer12hour1; // Setting Object 0 for Timer12hour1
+  Potentiometer Potentiometer0; // Setting Object 0 for Potentiometer0
+
   displaytime();
   Timer12hour1.timer();
-
+  OLED OLED1; // Setting Object 1 for OLED
   while (true)
   {
 
-    PotentiometerO.getpot();
-    OLEDO.OLEDdraw(PotentiometerO.getpot());
+    Potentiometer0.getpot();
+    OLED1.OLEDdraw(Potentiometer0.getpot());
     break;
   }
 
