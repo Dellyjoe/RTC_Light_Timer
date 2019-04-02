@@ -9,5 +9,5 @@ class OLED
 private:
 public:
   void intdisplay();
-  void OLEDdraw(int potvalue);
+  void OLEDdraw(int potvalue, int currenttimer);
 }; // end class OLED

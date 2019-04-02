@@ -34,9 +34,8 @@ void loop()
   OLED OLED1; // Setting Object 1 for OLED
   while (true)
   {
-
     Potentiometer0.getpot();
-    OLED1.OLEDdraw(Potentiometer0.getpot());
+    OLED1.OLEDdraw(Potentiometer0.getpot(), Timer12hour1.timer());
     break;
   }
 

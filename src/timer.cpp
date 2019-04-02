@@ -11,7 +11,7 @@ void Timer12hour::setuptimer()
 } //end setup
 //******************************************Setup*****************************//
 //*****************************************Functions**************************//
-void Timer12hour::timer()
+int Timer12hour::timer()
 {
   //check to see if it is time to turn on the relay
   unsigned long currentMillis = millis();
@@ -33,5 +33,17 @@ void Timer12hour::timer()
     }
     digitalWrite(timer12, replaystate); // setting the relay state to the realy pinout
   }
+  runingtimer = (currentMillis - previousMillis) / 1000;
+
+  //if (replaystate == HIGH)
+  // {
+  //   timeron = Yes;
+  // }
+  // else
+  // {
+  //  timeron = No;
+  //}
+
+  return (runingtimer); //timeron
 } // end timer
   //*****************************************Functions**************************//

@@ -8,7 +8,7 @@ void OLED::intdisplay()
 
 } // end void OLED
 
-void OLED::OLEDdraw(int potvalue)
+void OLED::OLEDdraw(int potvalue, int currenttimer)
 {
     u8g2.clearBuffer();                 // clear the internal memory
     u8g2.setFlipMode(1);                // Flips display 180 (1) = True
@@ -17,5 +17,11 @@ void OLED::OLEDdraw(int potvalue)
     u8g2.setCursor(70, 10); // set cursor location
     u8g2.print(potvalue);   // print at current cursor location
     u8g2.drawStr(85, 10, " % ");
-    u8g2.sendBuffer(); // transfer internal memory to the display
+    u8g2.drawStr(0, 25, "Relay on:");
+    //u8g2.setCursor(40, 25); // set cursor location
+
+    u8g2.drawStr(0, 50, "Runing Timer(ms):");
+    u8g2.setCursor(0, 60);    // set cursor location
+    u8g2.print(currenttimer); // print at current cursor location
+    u8g2.sendBuffer();        // transfer internal memory to the display
 } // end void OLED
