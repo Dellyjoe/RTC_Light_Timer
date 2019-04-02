@@ -26,7 +26,7 @@ void setup()
 //******************************************Main******************************//
 void loop()
 {
-  Timer12hour Timer12hour1; // Setting Object 0 for Timer12hour1
+  Timer12hour Timer12hour1;     // Setting Object 1 for Timer12hour1
   Potentiometer Potentiometer0; // Setting Object 0 for Potentiometer0
 
   displaytime();

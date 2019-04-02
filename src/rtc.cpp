@@ -1,27 +1,14 @@
-#include <Arduino.h>
 #include <rtc.h>
 
-//******************************************Setup*****************************//
+//*****************************************Functions**************************//
 void intrtc()
 {
   // set the Time library to use Teensy 3.0's RTC to keep time
   setSyncProvider(getTeensy3Time);
 
   Serial.begin(115200); // Setting up the Serial Terminal
-  while (!Serial)
-    ; // Wait for Arduino Serial Monitor to open
-  delay(100);
-  if (timeStatus() != timeSet)
-  {
-    Serial.println("Unable to sync with the RTC");
-  }
-  else
-  {
-    Serial.println("RTC has set the system time");
-  }
 }
-//******************************************Setup*****************************//
-//******************************************Main******************************//
+
 void displaytime()
 {
   intrtc();
@@ -32,21 +19,19 @@ void displaytime()
     {
       Teensy3Clock.set(t); // set the RTC
       setTime(t);
+      //adjustTime(offset * SECS_PER_HOUR);
     }
   }
   digitalClockDisplay();
   //delay(1000);
 }
-//******************************************Main******************************//
 //*****************************************Functions**************************//
 void digitalClockDisplay()
 {
-  // digital clock display of the time
+  //digital clock display of the time
   Serial.print(hour());
-  Serial.print(":");
-  Serial.print(minute());
-  Serial.print(":");
-  Serial.print(second());
+  printDigits(minute());
+  printDigits(second());
   Serial.print(": ");
   Serial.print(day());
   Serial.print("/");
@@ -56,6 +41,15 @@ void digitalClockDisplay()
   Serial.println();
 }
 
+void printDigits(int digits)
+{
+  // utility function for digital clock display: prints preceding colon and leading 0
+  Serial.print(":");
+  if (digits < 10)
+    Serial.print('0');
+  Serial.print(digits);
+}
+
 time_t getTeensy3Time()
 {
   return Teensy3Clock.get();
@@ -63,7 +57,7 @@ time_t getTeensy3Time()
 unsigned long processSyncMessage()
 {
   unsigned long pctime = 0L;
-  const unsigned long DEFAULT_TIME = 1553130740; // March 20, 2019 9:12:20 PM
+  const unsigned long DEFAULT_TIME = 1357041600; // Jan 1 2013
 
   if (Serial.find(TIME_HEADER))
   {

@@ -11,10 +11,9 @@ Ordered list on things to complete for this project, code based:
 - [x] Get LED on pin 13 to work with "blink without delay" code technique
 - [x] Put "Blink without delay" function code into a class and separate .cpp and .h header files
 - [x] Change name on LED file to Timer, and update that information on github with the right name change
-- [ ] Have OLED display new infromation without clearing the whole display i.e without blinking
-- [ ] Get OLDE and Pot function to display only after pot vaule has changed
-- [ ] Get OLED to not wipe whole display after displaying new pot vale
+- [x] Have OLED display new infromation without clearing the whole display i.e without blinking
 - [ ] Get RTC working and displayed on the OLED
+- [ ] Get OLDE and Pot function to display only after pot vaule has changed
 - [ ] Strip away all code that isn't necessary 
 
 Functionality:
