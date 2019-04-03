@@ -33,7 +33,7 @@ Hardware:
 - [ ] one pot to change timer/clock
 - [ ] one toggle switch for OLED
 - [ ] 3v Battery
-- [ ] 5v/1A AC charger with breadboard plug
+- [x] 5v/1A AC charger with breadboard plug
 
 Explantion of each funtion and component:
 
