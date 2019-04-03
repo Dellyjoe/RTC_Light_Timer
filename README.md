@@ -12,13 +12,15 @@ Ordered list on things to complete for this project, code based:
 - [x] Put "Blink without delay" function code into a class and separate .cpp and .h header files
 - [x] Change name on LED file to Timer, and update that information on github with the right name change
 - [x] Have OLED display new infromation without clearing the whole display i.e without blinking
+- [ ] Decide what RTC function to go with. Set automatically or set by button press/pot change
 - [ ] Get RTC working and displayed on the OLED
 - [ ] Get OLDE and Pot function to display only after pot vaule has changed
-- [ ] Strip away all code that isn't necessary 
+- [x] Strip away all code that isn't necessary 
 
 Functionality:
 - [ ] Display current time on OLED
 - [x] Use Blink without delay funtion for relay timer
+- [ ] Use toggle switch to interrupted the OLED to display set timer, set clock 
 - [ ] Have the ability to navagate through the OLED with a press of a button, with hold ability
 - [ ] Being able to Display current time and timer
 - [ ] When timer setpoint = time throw relay to turn on a LED light for 12 hours
@@ -26,8 +28,10 @@ Functionality:
 Hardware:
 - [ ] One or three pots to set timer setpoint
 - [ ] One OLED - smaller the better
-- [ ] One Microcontroller
+- [x] One Microcontroller
 - [ ] one button to set timer
+- [ ] one pot to change timer/clock
+- [ ] one toggle switch for OLED
 - [ ] 3v Battery
 - [ ] 5v/1A AC charger with breadboard plug
 

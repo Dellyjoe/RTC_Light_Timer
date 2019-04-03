@@ -1,15 +1,14 @@
 #include <timer.h>
 #include <Wire.h>
+
 //*****************************************Declare*****************************//
-int replaystate = LOW;            // init state for the relay
 unsigned long previousMillis = 0; // stores last updated vaule of relay
-//*****************************************Declare*****************************//
 //******************************************Setup*****************************//
 void Timer12hour::setuptimer()
 {
   pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
 } //end setup
-//******************************************Setup*****************************//
+
 //*****************************************Functions**************************//
 int Timer12hour::timer()
 {
@@ -35,15 +34,21 @@ int Timer12hour::timer()
   }
   runingtimer = (currentMillis - previousMillis) / 1000;
 
-  //if (replaystate == HIGH)
-  // {
-  //   timeron = Yes;
-  // }
-  // else
-  // {
-  //  timeron = No;
-  //}
-
-  return (runingtimer); //timeron
+  return (runingtimer);
 } // end timer
-  //*****************************************Functions**************************//
+
+String Timer12hour::getRelayString()
+{
+  if (replaystate == LOW)
+  {
+    return "OFF";
+  }
+  else if (replaystate == HIGH)
+  {
+    return "ON";
+  }
+  else
+  {
+    return "UNKNOWN";
+  }
+}

@@ -5,39 +5,25 @@
 // time, the use of pots and buttons to navigate around the OLED display and set
 // time to use for a timer.
 
-#include <Arduino.h>
 #include <potentiometer.h>
 #include <OLED.h>
 #include <rtc.h>
 #include <timer.h>
 #include <wire.h>
-
+//******************************************Declare*****************************//
+Timer12hour Timer12hour0; // Setting Object 0 for Timer12hour0
+OLED OLED0;               // Setting Object 0 for OLED
 //******************************************Setup*****************************//
 void setup()
 {
-  Timer12hour Timer12hour0; // Setting Object 0 for Timer12hour0
   Timer12hour0.setuptimer();
-
-  OLED OLED0; // Setting Object 0 for OLED
   OLED0.intdisplay();
 } //end setup
-//******************************************Setup*****************************//
-
 //******************************************Main******************************//
 void loop()
 {
-  Timer12hour Timer12hour1;     // Setting Object 1 for Timer12hour1
-  Potentiometer Potentiometer0; // Setting Object 0 for Potentiometer0
-
   displaytime();
-  Timer12hour1.timer();
-  OLED OLED1; // Setting Object 1 for OLED
-  while (true)
-  {
-    Potentiometer0.getpot();
-    OLED1.OLEDdraw(Potentiometer0.getpot(), Timer12hour1.timer());
-    break;
-  }
-
+  Timer12hour0.timer();
+  Potentiometer Potentiometer0; // Updated Pot Value
+  OLED0.OLEDdraw(Potentiometer0.getpot(), Timer12hour0.timer(), Timer12hour0.getRelayString());
 } // end void loop
-//******************************************Main******************************//

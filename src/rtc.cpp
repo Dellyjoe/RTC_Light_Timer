@@ -1,6 +1,6 @@
 #include <rtc.h>
 
-//*****************************************Functions**************************//
+//*****************************************Setup**************************//
 void intrtc()
 {
   // set the Time library to use Teensy 3.0's RTC to keep time
@@ -8,7 +8,7 @@ void intrtc()
 
   Serial.begin(115200); // Setting up the Serial Terminal
 }
-
+//*****************************************Functions**************************//
 void displaytime()
 {
   intrtc();
@@ -19,13 +19,12 @@ void displaytime()
     {
       Teensy3Clock.set(t); // set the RTC
       setTime(t);
-      //adjustTime(offset * SECS_PER_HOUR);
     }
   }
   digitalClockDisplay();
   //delay(1000);
 }
-//*****************************************Functions**************************//
+
 void digitalClockDisplay()
 {
   //digital clock display of the time
@@ -69,4 +68,4 @@ unsigned long processSyncMessage()
     }
   }
   return pctime;
-} //*****************************************Functions**************************//
+}
