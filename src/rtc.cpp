@@ -11,7 +11,6 @@ void intrtc()
 //*****************************************Functions**************************//
 void displaytime()
 {
-  intrtc();
   if (Serial.available())
   {
     time_t t = processSyncMessage();
@@ -46,6 +45,7 @@ time_t getTeensy3Time()
 {
   return Teensy3Clock.get();
 }
+
 unsigned long processSyncMessage()
 {
   unsigned long pctime = 0L;

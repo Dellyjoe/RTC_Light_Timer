@@ -18,6 +18,7 @@ void setup()
 {
   Timer12hour0.setuptimer();
   OLED0.intdisplay();
+  intrtc(); // get current time, set Serial
 } //end setup
 //******************************************Main******************************//
 void loop()
