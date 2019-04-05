@@ -22,7 +22,7 @@ void setup()
   OLED0.intdisplay();
   intrtc(); // get current time, set Serial
   pinMode(0, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(0), OLEDclockset, HIGH);
+  attachInterrupt(digitalPinToInterrupt(0), OLEDclockset, HIGH); // Setting interrupt pin D0
 } //end setup
 //******************************************Main******************************//
 void loop()

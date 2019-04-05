@@ -11,4 +11,4 @@ public:
   void OLEDdraw(int potvalue, int currenttimer, String RelayString);
 }; // end class OLED
 
-void OLEDclockset(); // Because this is used for an interrupt function it needs to be global
+void OLEDclockset(); //Not in a class Because this is used for an interrupt function it needs to be global
