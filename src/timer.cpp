@@ -1,6 +1,5 @@
 #include <timer.h>
 #include <Wire.h>
-
 //*****************************************Declare*****************************//
 unsigned long previousMillis = 0; // stores last updated vaule of relay
 //******************************************Setup*****************************//

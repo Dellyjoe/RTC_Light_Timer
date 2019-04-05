@@ -9,7 +9,9 @@
 #include <OLED.h>
 #include <rtc.h>
 #include <timer.h>
-#include <wire.h>
+#include <wire.h>          // i/O pins
+#include <avr/io.h>        // interrupt
+#include <avr/interrupt.h> // interrupt
 //******************************************Declare*****************************//
 Timer12hour Timer12hour0; // Setting Object 0 for Timer12hour0
 OLED OLED0;               // Setting Object 0 for OLED
@@ -19,6 +21,8 @@ void setup()
   Timer12hour0.setuptimer();
   OLED0.intdisplay();
   intrtc(); // get current time, set Serial
+  pinMode(0, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(0), OLEDclockset, HIGH);
 } //end setup
 //******************************************Main******************************//
 void loop()

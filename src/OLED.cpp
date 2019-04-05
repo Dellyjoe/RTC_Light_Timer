@@ -1,14 +1,15 @@
 #include <OLED.h>
-
+#include <Arduino.h>
+#include <wire.h>
 //******************************************Declare*****************************//
 U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
 //******************************************Setup*****************************//
 void OLED::intdisplay()
 {
     u8g2.begin(); // Start the Library code for the OLED
-
 } // end void OLED
-//******************************************Main******************************//
+
+//*****************************************Functions**************************//
 void OLED::OLEDdraw(int potvalue, int currenttimer, String RelayString)
 {
     u8g2.clearBuffer();                 // clear the internal memory
@@ -26,3 +27,12 @@ void OLED::OLEDdraw(int potvalue, int currenttimer, String RelayString)
     u8g2.print(currenttimer); // print at current cursor location
     u8g2.sendBuffer();        // transfer internal memory to the display
 } // end void OLED
+
+void OLEDclockset()
+{
+    u8g2.clearBuffer(); // clears current display
+    u8g2.drawStr(0, 10, "Set Clock:");
+    u8g2.drawStr(0, 25, "Set Timer");
+    u8g2.sendBuffer();
+    delay(500); // Needs to change, I can't have my timer get deplayed because I want to change the time... Think about?
+}
