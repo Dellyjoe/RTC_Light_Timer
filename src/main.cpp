@@ -30,5 +30,5 @@ void loop()
   displaytime();
   Timer12hour0.timer();
   Potentiometer Potentiometer0; // Updated Pot Value
-  OLED0.OLEDdraw(Potentiometer0.getpot(), Timer12hour0.timer(), Timer12hour0.getRelayString());
+  OLED0.OLEDdraw(Potentiometer0.getpot1(), Timer12hour0.timer(), Timer12hour0.getRelayString());
 } // end void loop

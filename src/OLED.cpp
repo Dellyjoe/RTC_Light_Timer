@@ -11,14 +11,14 @@ void OLED::intdisplay()
 } // end void OLED
 
 //*****************************************Functions**************************//
-void OLED::OLEDdraw(int potvalue, int currenttimer, String RelayString)
+void OLED::OLEDdraw(int potvalue1, int currenttimer, String RelayString)
 {
     u8g2.clearBuffer();                 // clear the internal memory
     u8g2.setFlipMode(1);                // Flips display 180 (1) = True
     u8g2.setFont(u8g2_font_koleeko_tr); // choose a suitable font
     u8g2.drawStr(0, 10, "Pot Value:");
     u8g2.setCursor(70, 10); // set cursor location
-    u8g2.print(potvalue);   // print at current cursor location
+    u8g2.print(potvalue1);  // print at current cursor location
     u8g2.drawStr(85, 10, " % ");
     u8g2.drawStr(0, 25, "Relay State:");
     u8g2.setCursor(85, 25); // set cursor location
@@ -33,19 +33,19 @@ void OLEDflag()
 {
     while (digitalRead(0) == HIGH)
     {
-        Potentiometer Potentiometer1;           // why should I use a different Object here ? is it because it is a saporate .cpp file?
-        clocktimerset(Potentiometer1.getpot()); // playing around with how I will change the timer vaules
+        Potentiometer Potentiometer1;            // why should I use a different Object here ? is it because it is a saporate .cpp file?
+        clocktimerset(Potentiometer1.getpot2()); // playing around with how I will change the timer vaules
     }
 } // end void OLEDflag
 
-int clocktimerset(int pv)
+int clocktimerset(int potvalue2)
 {
     u8g2.clearBuffer(); // clears current display
     u8g2.drawStr(0, 10, "Set Clock:");
     u8g2.drawStr(0, 25, "Set Timer");
     u8g2.setCursor(85, 25); // set cursor location
-    u8g2.print(pv);
+    u8g2.print(potvalue2);
     u8g2.sendBuffer();
-    delay(500); // Needs to change, I can't have my timer get delayed  because I want to change the time... Think about?
+
     return (0);
 } //end void clocktimerset
