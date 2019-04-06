@@ -12,6 +12,7 @@ Ordered list on things to complete for this project, code based:
 - [x] Put "Blink without delay" function code into a class and separate .cpp and .h header files
 - [x] Change name on LED file to Timer, and update that information on github with the right name change
 - [x] Have OLED display new infromation without clearing the whole display i.e without blinking
+- [ ] Figure out if you are updating the vaule of pot or if you are just reading it again when exiting. I believe I'm just reading a new value of pot when leaving the while loop b/c I don't bring anything with me after leaving the while loop
 - [ ] Decide what RTC function to go with. Set automatically or set by button press/pot change
 - [ ] Get RTC working and displayed on the OLED
 - [ ] Get OLDE and Pot function to display only after pot vaule has changed

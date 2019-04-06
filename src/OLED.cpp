@@ -46,6 +46,6 @@ int clocktimerset(int pv)
     u8g2.setCursor(85, 25); // set cursor location
     u8g2.print(pv);
     u8g2.sendBuffer();
-    delay(500); // Needs to change, I can't have my timer get deplayed because I want to change the time... Think about?
+    delay(500); // Needs to change, I can't have my timer get delayed  because I want to change the time... Think about?
     return (0);
 } //end void clocktimerset
