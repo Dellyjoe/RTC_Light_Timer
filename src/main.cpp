@@ -20,14 +20,12 @@ void setup()
 {
   Timer12hour0.setuptimer();
   OLED0.intdisplay();
-  intrtc(); // get current time, set Serial
   pinMode(0, INPUT);
   attachInterrupt(digitalPinToInterrupt(0), OLEDflag, HIGH); // Setting interrupt pin D0
 } //end setup
 //******************************************Main******************************//
 void loop()
 {
-  displaytime();
   Timer12hour0.timer();
   Potentiometer Potentiometer0; // Updated Pot Value
   OLED0.OLEDdraw(Potentiometer0.getpot1(), Timer12hour0.timer(), Timer12hour0.getRelayString());
