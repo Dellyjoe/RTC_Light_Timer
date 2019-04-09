@@ -1,7 +1,5 @@
-#include <OLED.h>
+#include <OLED_RTC.h>
 #include <Potentiometer.h>
-#include <wire.h>
-#include "RTClib.h"
 
 //******************************************Declare*****************************//
 U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
@@ -58,7 +56,7 @@ void OLED::OLEDdraw(int currenttimer, String RelayString)
 void OLEDflag()
 {
     while (digitalRead(0) == HIGH)
-    {
+    {                                            // Updating potvalue2
         Potentiometer Potentiometer1;            // why should I use a different Object here ? is it because it is a saporate .cpp file?
         clocktimerset(Potentiometer1.getpot2()); // playing around with how I will change the timer vaules
     }

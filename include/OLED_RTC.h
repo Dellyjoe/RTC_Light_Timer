@@ -2,7 +2,7 @@
 #ifdef U8X8_HAVE_HW_I2C
 #endif
 #include <Wire.h>
-
+#include "RTClib.h"
 class OLED
 {
 private:

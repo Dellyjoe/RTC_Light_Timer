@@ -6,9 +6,8 @@
 // time to use for a timer.
 
 #include <potentiometer.h>
-#include <OLED.h>
+#include <OLED_RTC.h>
 #include <timer.h>
-#include <wire.h>          // i/O pins
 #include <avr/io.h>        // interrupt
 #include <avr/interrupt.h> // interrupt
 //******************************************Declare*****************************//
