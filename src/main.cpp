@@ -7,7 +7,6 @@
 
 #include <potentiometer.h>
 #include <OLED.h>
-#include <rtc.h>
 #include <timer.h>
 #include <wire.h>          // i/O pins
 #include <avr/io.h>        // interrupt
@@ -20,7 +19,6 @@ void setup()
 {
   Timer12hour0.setuptimer();
   OLED0.intdisplay();
-  initializeRTC();
   pinMode(0, INPUT);
   attachInterrupt(digitalPinToInterrupt(0), OLEDflag, HIGH); // Setting interrupt pin D0
 } //end setup
@@ -28,7 +26,5 @@ void setup()
 void loop()
 {
   Timer12hour0.timer();
-  displaytime();
-  Potentiometer Potentiometer0; // Updated Pot Value
-  OLED0.OLEDdraw(Potentiometer0.getpot1(), Timer12hour0.timer(), Timer12hour0.getRelayString());
+  OLED0.OLEDdraw(Timer12hour0.timer(), Timer12hour0.getRelayString());
 } // end void loop

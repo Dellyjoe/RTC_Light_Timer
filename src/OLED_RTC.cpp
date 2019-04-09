@@ -1,0 +1,78 @@
+#include <OLED.h>
+#include <Potentiometer.h>
+#include <wire.h>
+#include "RTClib.h"
+
+//******************************************Declare*****************************//
+U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
+RTC_DS3231 rtc;
+//******************************************Setup*****************************//
+void OLED::intdisplay()
+{
+    u8g2.begin(); // Start the Library code for the OLED
+} // end void OLED
+//*****************************************Functions**************************//
+void OLED::OLEDdraw(int currenttimer, String RelayString)
+{
+    DateTime now = rtc.now();
+    // Sending current time to OLED
+    u8g2.clearBuffer();              // clear the internal memory
+    u8g2.setFlipMode(1);             // Flips display 180 (1) = True
+    u8g2.setFont(u8g2_font_6x12_te); // choose a suitable font
+    u8g2.drawStr(0, 7, "Time:");
+    u8g2.setCursor(32, 7);       // set cursor location
+    u8g2.print(now.hour(), DEC); // print at current cursor location
+    u8g2.setCursor(45, 7);
+    u8g2.print(':');
+    u8g2.setCursor(54, 7);
+    u8g2.print(now.minute(), DEC);
+    u8g2.setCursor(70, 7);
+    u8g2.print(':');
+    u8g2.setCursor(78, 7);
+    u8g2.print(now.second(), DEC);
+
+    // Sending current Date to OLED
+    u8g2.setCursor(0, 20);
+    u8g2.print("Date:");
+    u8g2.setCursor(30, 20);
+    u8g2.print(now.month(), DEC);
+    u8g2.setCursor(40, 20);
+    u8g2.print('/');
+    u8g2.setCursor(50, 20);
+    u8g2.print(now.day(), DEC);
+    u8g2.setCursor(60, 20);
+    u8g2.print('/');
+    u8g2.setCursor(70, 20);
+    u8g2.print(now.year(), DEC);
+
+    // Displaying Timer information to OLED
+    u8g2.drawStr(0, 35, "Relay State:");
+    u8g2.setCursor(72, 35);
+    u8g2.print(RelayString);
+    u8g2.drawStr(0, 50, "Runing Timer(s):");
+    u8g2.setCursor(0, 60);
+    u8g2.print(currenttimer); // print at current cursor location
+    u8g2.sendBuffer();        // transfer internal memory to the display
+} // end void OLED
+
+void OLEDflag()
+{
+    while (digitalRead(0) == HIGH)
+    {
+        Potentiometer Potentiometer1;            // why should I use a different Object here ? is it because it is a saporate .cpp file?
+        clocktimerset(Potentiometer1.getpot2()); // playing around with how I will change the timer vaules
+    }
+} // end void OLEDflag
+
+int clocktimerset(int potvalue2)
+{
+    u8g2.clearBuffer();                 // clear the internal memory
+    u8g2.setFont(u8g2_font_helvB12_te); // choose a suitable font
+    u8g2.clearBuffer();                 // clears current display
+    u8g2.drawStr(0, 15, "Timer (H):");
+    u8g2.setCursor(80, 15); // set cursor location
+    u8g2.print(potvalue2);
+    u8g2.sendBuffer();
+
+    return (potvalue2);
+} //end void clocktimerset

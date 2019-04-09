@@ -10,7 +10,7 @@ int Potentiometer::getpot1()
 
 int Potentiometer::getpot2()
 {
-  int potmap2 = map(pot2, 0, 1023, 0, 100); // map values 0-100
+  int potmap2 = map(pot2, 0, 1023, 0, 24); // map values 0-100
   delay(250);
   return (potmap2);
 } // Close int getpot

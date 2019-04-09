@@ -8,30 +8,24 @@ Look into using the #include "Ticker.h" and getting the basic function working o
 
 
 Ordered list on things to complete for this project, code based:
-- [x] Get LED on pin 13 to work with "blink without delay" code technique
-- [x] Put "Blink without delay" function code into a class and separate .cpp and .h header files
-- [x] Change name on LED file to Timer, and update that information on github with the right name change
-- [x] Have OLED display new infromation without clearing the whole display i.e without blinking
-- [ ] Figure out if you are updating the vaule of pot or if you are just reading it again when exiting. I believe I'm just reading a new value of pot when leaving the while loop b/c I don't bring anything with me after leaving the while loop
-- [ ] Decide what RTC function to go with. 
+- [ ] Display current timer on main OLED screen
+- [ ] Get clocktimerset funtion into a class 
+- [x] Decide what RTC function to go with. 
     - Will have the time set automautomatically, and have timer set by a pot
-- [ ] Get RTC working and displayed on the OLED
-- [ ] Get OLDE and Pot function to display only after pot vaule has changed
-- [x] Strip away all code that isn't necessary 
+- [x] Get RTC working and displayed on the OLED
+- [ ] Strip away all code that isn't necessary 
 
 Functionality:
-- [ ] Display current time on OLED
+- [ x Display current time on OLED
 - [x] Use Blink without delay funtion for relay timer
 - [ ] Use toggle switch to interrupted the OLED to display set timer, set clock 
-- [ ] Have the ability to navagate through the OLED with a press of a button, with hold ability
-- [ ] Being able to Display current time and timer
+- [x] Being able to Display current time and timer
 - [ ] When timer setpoint = time throw relay to turn on a LED light for 12 hours
 
 Hardware:
-- [ ] One or three pots to set timer setpoint
+- [x] One pot to set timer setpoint
 - [x] One OLED
 - [x] One Microcontroller
-- [ ] one pot to change timer
 - [x] one toggle switch for OLED
 - [x] 3v Battery
 - [x] 5v/1A AC charger with breadboard plug
