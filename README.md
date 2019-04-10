@@ -7,6 +7,13 @@ Description: This project will be able to display current timer time left, set r
 Look into using the #include "Ticker.h" and getting the basic function working or blink without delay function. Any RTC is not needed to make this project function as described above. It would be simpler to just use this Ticker.h. You would set current ticker value to 12 hours and display that on the OLED. Still give functionality of being able to use buttons, pots etc... Ticker.h could be used with the RTC function. When RTC == a set time then it triggers the relay open/close.
 
 
+Current coding Task to work on
+- [x] Put clocktimerset into a class
+- [x] Display potvalue 1,2 on OLED and mapped to set timer and timer alarm
+- [ ] Get potvalue2 to be your timmer set time
+- [ ] Have potvalue 1 set the time of the timer to go off when RTC clock hits that time
+- [ ] Clean up code
+
 Ordered list on things to complete for this project, code based:
 - [ ] Display current timer on main OLED screen
 - [ ] Get clocktimerset funtion into a class 

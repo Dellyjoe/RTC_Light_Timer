@@ -4,6 +4,7 @@
 //******************************************Declare*****************************//
 U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
 RTC_DS3231 rtc;
+
 //******************************************Setup*****************************//
 void OLED::intdisplay()
 {
@@ -56,21 +57,27 @@ void OLED::OLEDdraw(int currenttimer, String RelayString)
 void OLEDflag()
 {
     while (digitalRead(0) == HIGH)
-    {                                            // Updating potvalue2
-        Potentiometer Potentiometer1;            // why should I use a different Object here ? is it because it is a saporate .cpp file?
-        clocktimerset(Potentiometer1.getpot2()); // playing around with how I will change the timer vaules
+    {
+        OLED OLED1;                                                              // Updating potvalue2
+        Potentiometer Potentiometer1;                                            // why should I use a different Object here ? is it because it is a saporate .cpp file?
+        OLED1.clocktimerset(Potentiometer1.getpot1(), Potentiometer1.getpot2()); // playing around with how I will change the timer vaules
     }
 } // end void OLEDflag
 
-int clocktimerset(int potvalue2)
+int OLED::clocktimerset(int potvalue1, int potvalue2)
 {
     u8g2.clearBuffer();                 // clear the internal memory
     u8g2.setFont(u8g2_font_helvB12_te); // choose a suitable font
     u8g2.clearBuffer();                 // clears current display
-    u8g2.drawStr(0, 15, "Timer (H):");
-    u8g2.setCursor(80, 15); // set cursor location
+    u8g2.drawStr(0, 20, "Timer:");
+    u8g2.drawStr(75, 20, "Hours");
+    u8g2.setCursor(53, 20); // set cursor location
+    u8g2.print(potvalue1);
+    u8g2.drawStr(0, 40, "Timer Alarm:");
+    u8g2.drawStr(22, 58, "- Start Hour");
+    u8g2.setCursor(0, 58); // set cursor location
     u8g2.print(potvalue2);
     u8g2.sendBuffer();
 
-    return (potvalue2);
+    return (0);
 } //end void clocktimerset

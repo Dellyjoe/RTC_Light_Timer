@@ -9,7 +9,7 @@ private:
 public:
   void intdisplay();
   void OLEDdraw(int currenttimer, String RelayString);
+  int clocktimerset(int potvalue1, int potvalue2);
 }; // end class OLED
 
-void OLEDflag();                  //interrupt function is a global
-int clocktimerset(int potvalue2); // Put in a class
+void OLEDflag(); //interrupt function is a global
