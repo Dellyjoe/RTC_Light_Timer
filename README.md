@@ -11,7 +11,7 @@ Current coding Task to work on
 - [x] Put clocktimerset into a class
 - [x] Display potvalue 1,2 on OLED and mapped to set timer and timer alarm
 - [x] Button Added to pass timer by hour and alarm by clock to timer funtion
-- [] In sendvaluestimer funtion figure out how to pass both variables to timer funtion 
+- [ ] In sendvaluestimer funtion figure out how to pass both variables to timer funtion 
 - [ ] Get potvalue2 to be your timmer set time
 - [ ] Have potvalue 1 set the time of the timer to go off when RTC clock hits that time
 - [ ] Clean up code
