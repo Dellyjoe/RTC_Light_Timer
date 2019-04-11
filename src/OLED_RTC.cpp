@@ -39,9 +39,9 @@ void OLED::OLEDdraw(int currenttimer, String RelayString)
     u8g2.print('/');
     u8g2.setCursor(50, 20);
     u8g2.print(now.day(), DEC);
-    u8g2.setCursor(60, 20);
+    u8g2.setCursor(63, 20);
     u8g2.print('/');
-    u8g2.setCursor(70, 20);
+    u8g2.setCursor(73, 20);
     u8g2.print(now.year(), DEC);
 
     // Displaying Timer information to OLED
@@ -54,9 +54,9 @@ void OLED::OLEDdraw(int currenttimer, String RelayString)
     u8g2.sendBuffer();        // transfer internal memory to the display
 } // end void OLED
 
-void OLEDflag()
+void OLEDflag() // Switch Flag
 {
-    while (digitalRead(0) == HIGH)
+    while (digitalRead(0) == HIGH && digitalRead(1) == LOW)
     {
         OLED OLED1;                                                              // Updating potvalue2
         Potentiometer Potentiometer1;                                            // why should I use a different Object here ? is it because it is a saporate .cpp file?
@@ -64,7 +64,17 @@ void OLEDflag()
     }
 } // end void OLEDflag
 
-int OLED::clocktimerset(int potvalue1, int potvalue2)
+void SendValuesflag() // Button Flag
+{
+    while (digitalRead(1) == HIGH && digitalRead(0) == HIGH)
+    {
+        OLED OLED2;
+        Potentiometer Potentiometer2;
+        OLED2.sendvaluestimer(Potentiometer2.getpot1(), Potentiometer2.getpot2());
+    }
+} // end void SendValuesflag
+
+void OLED::clocktimerset(int potvalue1, int potvalue2)
 {
     u8g2.clearBuffer();                 // clear the internal memory
     u8g2.setFont(u8g2_font_helvB12_te); // choose a suitable font
@@ -79,5 +89,19 @@ int OLED::clocktimerset(int potvalue1, int potvalue2)
     u8g2.print(potvalue2);
     u8g2.sendBuffer();
 
-    return (0);
 } //end void clocktimerset
+
+void OLED::sendvaluestimer(int potvalue1, int potvalue2)
+{
+    u8g2.clearBuffer();                 // clear the internal memory
+    u8g2.setFont(u8g2_font_helvB12_te); // choose a suitable font
+    u8g2.clearBuffer();                 // clears current display
+    u8g2.drawStr(35, 25, "Vaules");
+    u8g2.drawStr(35, 45, "Saved!");
+    u8g2.sendBuffer();
+
+    timerpot = potvalue1;
+    alarmpot = potvalue2;
+
+    delay(1000);
+}

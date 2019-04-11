@@ -19,7 +19,8 @@ void setup()
   Timer12hour0.setuptimer();
   OLED0.intdisplay();
   pinMode(0, INPUT);
-  attachInterrupt(digitalPinToInterrupt(0), OLEDflag, HIGH); // Setting interrupt pin D0
+  attachInterrupt(digitalPinToInterrupt(0), OLEDflag, HIGH);       // Setting interrupt pin D0
+  attachInterrupt(digitalPinToInterrupt(1), SendValuesflag, HIGH); // Setting interrupt pin D1
 } //end setup
 //******************************************Main******************************//
 void loop()

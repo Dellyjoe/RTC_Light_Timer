@@ -6,10 +6,15 @@
 class OLED
 {
 private:
+  int timerpot;
+  int alarmpot;
+
 public:
   void intdisplay();
   void OLEDdraw(int currenttimer, String RelayString);
-  int clocktimerset(int potvalue1, int potvalue2);
+  void clocktimerset(int potvalue1, int potvalue2);
+  void sendvaluestimer(int potvalue1, int potvalue2);
 }; // end class OLED
 
-void OLEDflag(); //interrupt function is a global
+void OLEDflag();       //interrupt function is a global
+void SendValuesflag(); //interrupt function is a global
