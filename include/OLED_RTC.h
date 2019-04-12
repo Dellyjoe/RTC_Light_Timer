@@ -6,9 +6,6 @@
 class OLED
 {
 private:
-  int timerpot;
-  int alarmpot;
-
 public:
   void intdisplay();
   void OLEDdraw(int currenttimer, String RelayString);

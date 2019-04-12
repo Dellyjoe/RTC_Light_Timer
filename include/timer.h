@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+#include <G_structure.h>
 class Timer12hour
 {
 private:

@@ -1,3 +1,4 @@
+#include <G_structure.h>
 #include <OLED_RTC.h>
 #include <Potentiometer.h>
 
@@ -100,8 +101,10 @@ void OLED::sendvaluestimer(int potvalue1, int potvalue2)
     u8g2.drawStr(35, 45, "Saved!");
     u8g2.sendBuffer();
 
-    timerpot = potvalue1;
-    alarmpot = potvalue2;
+    timeralarmpara timerpot;
+    timerpot.timer = potvalue1;
+    timeralarmpara alarmpot;
+    alarmpot.clockset = potvalue2;
 
     delay(1000);
 }

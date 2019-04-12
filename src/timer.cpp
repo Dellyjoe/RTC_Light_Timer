@@ -1,6 +1,7 @@
 #include <timer.h>
 #include <OLED_RTC.h>
 #include <Wire.h>
+
 //*****************************************Declare*****************************//
 unsigned long previousMillis = 0; // stores last updated vaule of relay
 
@@ -12,6 +13,7 @@ void Timer12hour::setuptimer()
 
 //*****************************************Functions**************************//
 int Timer12hour::timer()
+//int Timer12hour::timer(timeralarmpara, int timer, int clockset)
 {
 
   //check to see if it is time to turn on the relay
