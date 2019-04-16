@@ -6,16 +6,19 @@
 unsigned long previousMillis = 0; // stores last updated vaule of relay
 
 //******************************************Setup*****************************//
-void Timer12hour::setuptimer()
+void Timerhour::setuptimer()
 {
   pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
+  Serial.begin(9600);
 } //end setup
 
 //*****************************************Functions**************************//
-int Timer12hour::timer()
-//int Timer12hour::timer(timeralarmpara, int timer, int clockset)
+int Timerhour::timer(timeralarmpara Timervalues)
 {
-
+  Timervalues.timer = timerinterval;
+  Serial.print(timerinterval);
+  Serial.println();
+  delay(500);
   //check to see if it is time to turn on the relay
   unsigned long currentMillis = millis();
   if ((currentMillis - previousMillis) >= timerinterval)
@@ -41,7 +44,7 @@ int Timer12hour::timer()
   return (runingtimer);
 } // end timer
 
-String Timer12hour::getRelayString()
+String Timerhour::getRelayString()
 {
   if (replaystate == LOW)
   {

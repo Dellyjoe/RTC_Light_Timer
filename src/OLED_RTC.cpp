@@ -92,19 +92,18 @@ void OLED::clocktimerset(int potvalue1, int potvalue2)
 
 } //end void clocktimerset
 
-void OLED::sendvaluestimer(int potvalue1, int potvalue2)
+struct timeralarmpara OLED::sendvaluestimer(int potvalue1, int potvalue2)
 {
     u8g2.clearBuffer();                 // clear the internal memory
     u8g2.setFont(u8g2_font_helvB12_te); // choose a suitable font
-    u8g2.clearBuffer();                 // clears current display
     u8g2.drawStr(35, 25, "Vaules");
     u8g2.drawStr(35, 45, "Saved!");
     u8g2.sendBuffer();
 
-    timeralarmpara timerpot;
-    timerpot.timer = potvalue1;
-    timeralarmpara alarmpot;
-    alarmpot.clockset = potvalue2;
+    timeralarmpara Timervalues;
+    Timervalues.timer = potvalue1;
+    Timervalues.clockset = potvalue2;
+    delay(500);
 
-    delay(1000);
+    return (Timervalues);
 }

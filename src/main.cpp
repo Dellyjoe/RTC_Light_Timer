@@ -11,20 +11,23 @@
 #include <avr/io.h>        // interrupt
 #include <avr/interrupt.h> // interrupt
 //******************************************Declare*****************************//
-Timer12hour Timer12hour0; // Setting Object 0 for Timer12hour0
-OLED OLED0;               // Setting Object 0 for OLED
+Timerhour Timerhour0;       // Setting Object 0 for Timer12hour0
+OLED OLED0;                 // Setting Object 0 for OLED
+timeralarmpara Timervalues; // Struct Declare for timeralarmpara
 //******************************************Setup*****************************//
 void setup()
 {
-  Timer12hour0.setuptimer();
+  Timerhour0.setuptimer();
   OLED0.intdisplay();
   pinMode(0, INPUT);
+  pinMode(1, INPUT);
   attachInterrupt(digitalPinToInterrupt(0), OLEDflag, HIGH);       // Setting interrupt pin D0
   attachInterrupt(digitalPinToInterrupt(1), SendValuesflag, HIGH); // Setting interrupt pin D1
 } //end setup
 //******************************************Main******************************//
 void loop()
 {
-  Timer12hour0.timer();
-  OLED0.OLEDdraw(Timer12hour0.timer(), Timer12hour0.getRelayString());
+  Timerhour0.timer(Timervalues);
+  OLED0.OLEDdraw(Timerhour0.timer(Timervalues), Timerhour0.getRelayString());
+
 } // end void loop
