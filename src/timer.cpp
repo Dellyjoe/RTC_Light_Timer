@@ -2,9 +2,6 @@
 #include <OLED_RTC.h>
 #include <Wire.h>
 
-//*****************************************Declare*****************************//
-unsigned long previousMillis = 0; // stores last updated vaule of relay
-
 //******************************************Setup*****************************//
 void Timerhour::setuptimer()
 {
@@ -13,7 +10,7 @@ void Timerhour::setuptimer()
 } //end setup
 
 //*****************************************Functions**************************//
-int Timerhour::timer(timeralarmpara Timervalues)
+int Timerhour::timer(timeralarmpara &Timervalues)
 {
   Timervalues.timer = timerinterval;
   Serial.print(timerinterval);
