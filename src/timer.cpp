@@ -12,10 +12,11 @@ void Timerhour::setuptimer()
 //*****************************************Functions**************************//
 int Timerhour::timer(timeralarmpara &Timervalues)
 {
-  Timervalues.timer = timerinterval;
-  Serial.print(timerinterval);
-  Serial.println();
-  delay(500);
+  //timerinterval = Timervalues.timer;
+  //Serial.print(timerinterval);
+  //Serial.println();
+  //delay(500);
+
   //check to see if it is time to turn on the relay
   unsigned long currentMillis = millis();
   if ((currentMillis - previousMillis) >= timerinterval)

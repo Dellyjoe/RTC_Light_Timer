@@ -103,6 +103,8 @@ struct timeralarmpara OLED::sendvaluestimer(int potvalue1, int potvalue2)
     timeralarmpara Timervalues;
     Timervalues.timer = potvalue1;
     Timervalues.clockset = potvalue2;
+    Serial.print(Timervalues.timer);
+    Serial.println();
     delay(500);
 
     return (Timervalues);

@@ -27,6 +27,6 @@ void setup()
 //******************************************Main******************************//
 void loop()
 {
-  Timerhour0.timer(Timervalues);
   OLED0.OLEDdraw(Timerhour0.timer(Timervalues), Timerhour0.getRelayString());
+  Timerhour0.timer(Timervalues);
 } // end void loop
