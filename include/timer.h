@@ -10,6 +10,6 @@ private:
   int timerinterval = 10000;        // Interval for relay blink
 public:
   void setuptimer();
-  int timer(timeralarmpara &Timervalues);
+  int timer(timeralarmpara Timervalues);
   String getRelayString();
 }; // end class LED

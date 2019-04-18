@@ -59,9 +59,9 @@ void OLEDflag() // Switch Flag
 {
     while (digitalRead(0) == HIGH && digitalRead(1) == LOW)
     {
-        OLED OLED1;                                                              // Updating potvalue2
-        Potentiometer Potentiometer1;                                            // why should I use a different Object here ? is it because it is a saporate .cpp file?
-        OLED1.clocktimerset(Potentiometer1.getpot1(), Potentiometer1.getpot2()); // playing around with how I will change the timer vaules
+        OLED OLED1;
+        Potentiometer Potentiometer1; // why should I use a different Object here ? is it because it is a saporate .cpp file?
+        OLED1.clocktimerset(Potentiometer1.getpot1(), Potentiometer1.getpot2());
     }
 } // end void OLEDflag
 
@@ -86,7 +86,7 @@ void OLED::clocktimerset(int potvalue1, int potvalue2)
     u8g2.print(potvalue1);
     u8g2.drawStr(0, 40, "Timer Alarm:");
     u8g2.drawStr(22, 58, "- Start Hour");
-    u8g2.setCursor(0, 58); // set cursor location
+    u8g2.setCursor(0, 58);
     u8g2.print(potvalue2);
     u8g2.sendBuffer();
 
@@ -94,13 +94,13 @@ void OLED::clocktimerset(int potvalue1, int potvalue2)
 
 struct timeralarmpara OLED::sendvaluestimer(int potvalue1, int potvalue2)
 {
-    u8g2.clearBuffer();                 // clear the internal memory
-    u8g2.setFont(u8g2_font_helvB12_te); // choose a suitable font
+    u8g2.clearBuffer();
+    u8g2.setFont(u8g2_font_helvB12_te);
     u8g2.drawStr(35, 25, "Vaules");
     u8g2.drawStr(35, 45, "Saved!");
     u8g2.sendBuffer();
 
-    timeralarmpara Timervalues;
+    struct timeralarmpara Timervalues;
     Timervalues.timer = potvalue1;
     Timervalues.clockset = potvalue2;
     Serial.print(Timervalues.timer);
@@ -108,4 +108,4 @@ struct timeralarmpara OLED::sendvaluestimer(int potvalue1, int potvalue2)
     delay(500);
 
     return (Timervalues);
-}
+}; // ending sendvaluestimer
