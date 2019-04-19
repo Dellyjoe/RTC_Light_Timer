@@ -73,6 +73,8 @@ void SendValuesflag() // Button Flag
         Potentiometer Potentiometer2;
         OLED2.sendvaluestimer(tap, Potentiometer2.getpot1(), Potentiometer2.getpot2());
     }
+    Serial.print(tap.timer);
+    Serial.println();
 } // end void SendValuesflag
 
 void OLED::clocktimerset(int potvalue1, int potvalue2)
@@ -100,7 +102,7 @@ void OLED::sendvaluestimer(struct timeralarmpara &Timervalues, int potvalue1, in
     u8g2.drawStr(35, 45, "Saved!");
     u8g2.sendBuffer();
 
-    Timervalues.timer = (potvalue1 * 3600); // setting timer to 1 hour length
+    Timervalues.timer = (potvalue1 * 3600); // setting timer to  hour length in sec
     Timervalues.clockset = potvalue2;
 
     Serial.print("New timer Length: ");
