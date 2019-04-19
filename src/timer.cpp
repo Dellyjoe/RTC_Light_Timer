@@ -12,7 +12,7 @@ void Timerhour::setuptimer()
 int Timerhour::timer(struct timeralarmpara &Timervalues)
 {
 
-    if (Timervalues.timer != timerinterval)
+  if (Timervalues.timer != timerinterval)
   {
     timerinterval = Timervalues.timer;
     return (timerinterval);
@@ -22,9 +22,9 @@ int Timerhour::timer(struct timeralarmpara &Timervalues)
     //do nothing
   }
 
-  Serial.print(Timervalues.timer);
-  Serial.println();
-  delay(500);
+  // Serial.print(Timervalues.timer);
+  // Serial.println();
+  // delay(500);
 
   //check to see if it is time to turn on the relay
   unsigned long currentMillis = millis();
