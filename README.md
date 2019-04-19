@@ -4,40 +4,38 @@ Author: Joseph Vitale
 
 Description: This project will be able to display current timer time left, set relay on/off, the use of pots and buttons to navigate around the OLED display and set time RTC for relay switch.
 
-Look into using the #include "Ticker.h" and getting the basic function working or blink without delay function. Any RTC is not needed to make this project function as described above. It would be simpler to just use this Ticker.h. You would set current ticker value to 12 hours and display that on the OLED. Still give functionality of being able to use buttons, pots etc... Ticker.h could be used with the RTC function. When RTC == a set time then it triggers the relay open/close.
+ Any RTC is not needed to make this project function as described above. It would be simpler to just use this Ticker.h. You would set current ticker value to 12 hours and display that on the OLED. Still give functionality of being able to use buttons, pots etc... Ticker.h could be used with the RTC function. When RTC == a set time then it triggers the relay open/close.
 
 
 Current coding Task to work on
-- [x] Put clocktimerset into a class
-- [x] Display potvalue 1,2 on OLED and mapped to set timer and timer alarm
-- [x] Button Added to pass timer by hour and alarm by clock to timer funtion
 - [ ] In sendvaluestimer funtion figure out how to pass both variables to timer funtion 
-- [ ] Get potvalue2 to be your timmer set time
-- [ ] Have potvalue 1 set the time of the timer to go off when RTC clock hits that time
+    - Will have to get current coded struct to work
+- [ ] Have potvalue set the time of the timer to go off when RTC clock hits that time
+- [ ] Have clockalarm activate relay for the amount of time that timer is set to
 - [ ] Clean up code
 
 Ordered list on things to complete for this project, code based:
 - [ ] Display current timer on main OLED screen
 - [ ] Get clocktimerset funtion into a class 
 - [x] Decide what RTC function to go with. 
-    - Will have the time set automautomatically, and have timer set by a pot
+    - Will have the time set automautomatically, and use clockalrm to activate on relay 
 - [x] Get RTC working and displayed on the OLED
 - [ ] Strip away all code that isn't necessary 
 
 Functionality:
-- [x] Display current time on OLED
-- [x] Use Blink without delay funtion for relay timer
-- [ ] Use toggle switch to interrupted the OLED to display set timer, set clock 
+- [x] Use toggle switch to interrupted the OLED to display set timer, set clock 
 - [x] Being able to Display current time and timer
-- [ ] When timer setpoint = time throw relay to turn on a LED light for 12 hours
+- [ ] Programmable clockalrm and timer length 
+- [ ] When clock setpoint = clockalarm throw relay to turn on a LED light for the set amount of time
 
 Hardware:
 - [x] One pot to set timer setpoint
 - [x] One OLED
-- [x] One Microcontroller
+- [x] A Microcontroller
 - [x] one toggle switch for OLED
-- [x] 3v Battery
+- [x] 3v Battery for RTC
 - [x] 5v/1A AC charger with breadboard plug
+- [x] A button to submit new values to Timer
 
 Explantion of each funtion and component:
 

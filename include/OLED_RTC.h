@@ -10,7 +10,7 @@ public:
   void intdisplay();
   void OLEDdraw(int currenttimer, String RelayString);
   void clocktimerset(int potvalue1, int potvalue2);
-  struct timeralarmpara sendvaluestimer(int potvalue1, int potvalue2);
+  void sendvaluestimer(struct timeralarmpara &Timervalues, int potvalue1, int potvalue2);
 }; // end class OLED
 
 void OLEDflag();       //interrupt function is a global function
