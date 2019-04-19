@@ -67,11 +67,12 @@ void OLEDflag() // Switch Flag
 
 void SendValuesflag() // Button Flag
 {
+    struct timeralarmpara tap; // declare a new variable named tap
     while (digitalRead(1) == HIGH && digitalRead(0) == HIGH)
     {
         OLED OLED2;
         Potentiometer Potentiometer2;
-        OLED2.sendvaluestimer(Potentiometer2.getpot1(), Potentiometer2.getpot2());
+        OLED2.sendvaluestimer(tap, Potentiometer2.getpot1(), Potentiometer2.getpot2());
     }
 } // end void SendValuesflag
 
@@ -92,7 +93,8 @@ void OLED::clocktimerset(int potvalue1, int potvalue2)
 
 } //end void clocktimerset
 
-struct timeralarmpara OLED::sendvaluestimer(int potvalue1, int potvalue2)
+// struct timeralarmpara &Timervalues (maps tap to Timervalues)
+void OLED::sendvaluestimer(struct timeralarmpara &Timervalues, int potvalue1, int potvalue2)
 {
     u8g2.clearBuffer();
     u8g2.setFont(u8g2_font_helvB12_te);
@@ -100,12 +102,10 @@ struct timeralarmpara OLED::sendvaluestimer(int potvalue1, int potvalue2)
     u8g2.drawStr(35, 45, "Saved!");
     u8g2.sendBuffer();
 
-    struct timeralarmpara Timervalues;
     Timervalues.timer = potvalue1;
     Timervalues.clockset = potvalue2;
     Serial.print(Timervalues.timer);
     Serial.println();
     delay(500);
 
-    return (Timervalues);
-}; // ending sendvaluestimer
+} // ending sendvaluestimer
