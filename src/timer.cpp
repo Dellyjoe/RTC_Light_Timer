@@ -5,27 +5,26 @@
 //******************************************Setup*****************************//
 void Timerhour::setuptimer()
 {
-  pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
+  pinMode(relay, OUTPUT); // setting pin 13 to an output pin
 } //end setup
 
 //*****************************************Functions**************************//
 int Timerhour::timer(struct timeralarmpara &Timervalues)
 {
 
-  Serial.print(Timervalues.timer);
-  Serial.println();
-  delay(50);
-  timerinterval = Timervalues.timer;
-
-  if (Timervalues.timer == Timervalues.timer)
-  {
-    //do nothing
-  }
-  else
+    if (Timervalues.timer != timerinterval)
   {
     timerinterval = Timervalues.timer;
     return (timerinterval);
   }
+  else
+  {
+    //do nothing
+  }
+
+  Serial.print(Timervalues.timer);
+  Serial.println();
+  delay(500);
 
   //check to see if it is time to turn on the relay
   unsigned long currentMillis = millis();
@@ -45,7 +44,7 @@ int Timerhour::timer(struct timeralarmpara &Timervalues)
 
       replaystate = LOW;
     }
-    digitalWrite(timer12, replaystate); // setting the relay state to the relay pinout
+    digitalWrite(relay, replaystate); // setting the relay state to the relay pinout
   }
   runingtimer = (currentMillis - previousMillis) / 1000;
 

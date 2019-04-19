@@ -5,7 +5,6 @@
 //******************************************Declare*****************************//
 U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
 RTC_DS3231 rtc;
-
 //******************************************Setup*****************************//
 void OLED::intdisplay()
 {
@@ -90,7 +89,6 @@ void OLED::clocktimerset(int potvalue1, int potvalue2)
     u8g2.setCursor(0, 58);
     u8g2.print(potvalue2);
     u8g2.sendBuffer();
-
 } //end void clocktimerset
 
 // struct timeralarmpara &Timervalues (maps tap to Timervalues)
@@ -102,10 +100,14 @@ void OLED::sendvaluestimer(struct timeralarmpara &Timervalues, int potvalue1, in
     u8g2.drawStr(35, 45, "Saved!");
     u8g2.sendBuffer();
 
-    Timervalues.timer = potvalue1;
+    Timervalues.timer = (potvalue1 * 3600); // setting timer to 1 hour length
     Timervalues.clockset = potvalue2;
+
+    Serial.print("New timer Length: ");
     Serial.print(Timervalues.timer);
     Serial.println();
+    Serial.print("New clock start alarm: ");
+    Serial.print(Timervalues.clockset);
+    Serial.println();
     delay(500);
-
 } // ending sendvaluestimer

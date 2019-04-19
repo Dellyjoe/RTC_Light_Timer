@@ -3,7 +3,7 @@
 class Timerhour
 {
 private:
-  const int timer12 = 13;
+  const int relay = 13;
   int runingtimer;
   int replaystate = LOW;            // init state for the relay
   unsigned long previousMillis = 0; // stores last updated vaule of relay
