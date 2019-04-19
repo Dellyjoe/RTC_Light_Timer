@@ -6,27 +6,26 @@
 void Timerhour::setuptimer()
 {
   pinMode(timer12, OUTPUT); // setting pin 13 to an output pin
-  Serial.begin(9600);
 } //end setup
 
 //*****************************************Functions**************************//
-int Timerhour::timer(timeralarmpara Timervalues)
+int Timerhour::timer(struct timeralarmpara &Timervalues)
 {
 
   Serial.print(Timervalues.timer);
   Serial.println();
   delay(50);
-  //timerinterval = Timervalues.timer;
+  timerinterval = Timervalues.timer;
 
-  //if (Timervalues.timer == Timervalues.timer)
-  // {
-  //   //do nothing
-  // }
-  // else
-  // {
-  //   timerinterval = Timervalues.timer;
-  //   return (timerinterval);
-  // }
+  if (Timervalues.timer == Timervalues.timer)
+  {
+    //do nothing
+  }
+  else
+  {
+    timerinterval = Timervalues.timer;
+    return (timerinterval);
+  }
 
   //check to see if it is time to turn on the relay
   unsigned long currentMillis = millis();
