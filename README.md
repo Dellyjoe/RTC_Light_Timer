@@ -30,6 +30,7 @@ Functionality:
 - [ ] Programmable clockalrm and timer length 
 - [ ] When clock setpoint = clockalarm throw relay to turn on a LED light for the set amount of time
 - [ ] add SparkFun Soil Moisture Sensor, to understand want to water your plants
+
 Hardware:
 - [x] One pot to set timer setpoint
 - [x] One OLED
