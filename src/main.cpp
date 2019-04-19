@@ -23,10 +23,13 @@ void setup()
   pinMode(1, INPUT);
   attachInterrupt(digitalPinToInterrupt(0), OLEDflag, HIGH);       // Setting interrupt pin D0
   attachInterrupt(digitalPinToInterrupt(1), SendValuesflag, HIGH); // Setting interrupt pin D1
+  Serial.begin(9600);
 } //end setup
 //******************************************Main******************************//
 void loop()
 {
+
+  // map Timer12hour0.timer(Tap0) return to currenttimer , map Timerhour0.getRelayString() return to Relaystring
   OLED0.OLEDdraw(Timerhour0.timer(Timervalues), Timerhour0.getRelayString());
   Timerhour0.timer(Timervalues);
 } // end void loop
