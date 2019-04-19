@@ -13,7 +13,6 @@
 //******************************************Declare*****************************//
 Timerhour Timerhour0; // Setting Object 0 for Timer12hour0
 OLED OLED0;           // Setting Object 0 for OLED
-timeralarmpara tap;   // Struct Declare for timeralarmpara
 //******************************************Setup*****************************//
 void setup()
 {
@@ -28,6 +27,7 @@ void setup()
 //******************************************Main******************************//
 void loop()
 {
+  struct timeralarmpara tap; // Struct Declare for timeralarmpara
   // map Timer12hour0.timer(Tap0) return to currenttimer , map Timerhour0.getRelayString() return to Relaystring
   OLED0.OLEDdraw(Timerhour0.timer(tap), Timerhour0.getRelayString());
   Timerhour0.timer(tap);
