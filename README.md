@@ -8,6 +8,8 @@ Description: This project will be able to display current timer time left, set r
 
 
 Current coding Task to work on
+- [ ] Get timerinterval to only turn on relay when Timervalues.clockset is = to surrent clock time.
+    - convert Timervalues.clockset into hour() for comparability 
 - [ ] In sendvaluestimer funtion figure out how to pass both variables to timer funtion 
     - Will have to get current coded struct to work
 - [ ] Have potvalue set the time of the timer to go off when RTC clock hits that time
