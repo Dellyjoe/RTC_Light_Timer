@@ -9,7 +9,7 @@ RTC_DS3231 rtc;
 void OLED::intdisplay()
 {
     u8g2.begin(); // Start the Library code for the OLED
-} // end void OLED
+} // end void intdisplay
 //*****************************************Functions**************************//
 void OLED::OLEDdraw(int currenttimer, String RelayString)
 {
@@ -52,7 +52,7 @@ void OLED::OLEDdraw(int currenttimer, String RelayString)
     u8g2.setCursor(0, 60);
     u8g2.print(currenttimer); // print at current cursor location
     u8g2.sendBuffer();        // transfer internal memory to the display
-} // end void OLED
+} // end void OLEDdraw
 
 void OLEDflag() // Switch Flag
 {
@@ -72,8 +72,13 @@ void SendValuesflag() // Button Flag
         OLED OLED2;
         Potentiometer Potentiometer2;
         OLED2.sendvaluestimer(tap, Potentiometer2.getpot1(), Potentiometer2.getpot2());
+        break;
     }
+    Serial.print("I am tap.timer :");
     Serial.print(tap.timer);
+    Serial.println();
+    Serial.print("I am tap.clock: ");
+    Serial.print(tap.clockset);
     Serial.println();
 } // end void SendValuesflag
 
@@ -102,7 +107,7 @@ void OLED::sendvaluestimer(struct timeralarmpara &Timervalues, int potvalue1, in
     u8g2.drawStr(35, 45, "Saved!");
     u8g2.sendBuffer();
 
-    Timervalues.timer = (potvalue1 * 3600); // setting timer to  hour length in sec
+    Timervalues.timer = (potvalue1); // setting timer to  hour length in sec
     Timervalues.clockset = potvalue2;
 
     Serial.print("New timer Length: ");
