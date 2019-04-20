@@ -11,8 +11,9 @@
 #include <avr/io.h>        // interrupt
 #include <avr/interrupt.h> // interrupt
 //******************************************Declare*****************************//
-Timerhour Timerhour0; // Setting Object 0 for Timer12hour0
-OLED OLED0;           // Setting Object 0 for OLED
+Timerhour Timerhour0;      // Setting Object 0 for Timer12hour0
+OLED OLED0;                // Setting Object 0 for OLED
+struct timeralarmpara tap; // Struct Declare for timeralarmpara
 //******************************************Setup*****************************//
 void setup()
 {
@@ -27,8 +28,7 @@ void setup()
 //******************************************Main******************************//
 void loop()
 {
-  struct timeralarmpara tap; // Struct Declare for timeralarmpara
-  // map Timer12hour0.timer(Tap0) return to currenttimer , map Timerhour0.getRelayString() return to Relaystring
   OLED0.OLEDdraw(Timerhour0.timer(tap), Timerhour0.getRelayString());
+  // map Timerhour0.timer(Tap) return to currenttimer , map Timerhour0.getRelayString() return to Relaystring
   Timerhour0.timer(tap);
 } // end void loop
