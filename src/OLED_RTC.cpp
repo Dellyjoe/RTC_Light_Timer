@@ -6,6 +6,7 @@
 U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
 RTC_DS3231 rtc;
 //******************************************Setup*****************************//
+
 void OLED::intdisplay()
 {
     u8g2.begin(); // Start the Library code for the OLED
@@ -118,3 +119,18 @@ void OLED::sendvaluestimer(struct timeralarmpara &Timervalues, int potvalue1, in
     Serial.println();
     delay(500);
 } // ending sendvaluestimer
+
+void alarm_now()
+{
+    rtc.writeSqwPinMode(DS3231_OFF); // sets clock pin to become an interrupt
+    rtc.clearAlarm(1);
+    rtc.disableAlarm(1);
+    DateTime alarm1(2019, 4, 28, 14, 0, 0); // find out the code for this.
+    rtc.setAlarm1(alarm1, DS3231_A1_Hour);
+    pinMode(24, OUTPUT);
+    digitalWrite(24, HIGH); // turn the LED on (HIGH is the voltage level)
+    delay(15000);           // wait for a second
+    digitalWrite(24, LOW);  // turn the LED off by making the voltage LOW
+    delay(1000);
+    rtc.clearAlarm(1);
+}

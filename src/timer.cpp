@@ -9,6 +9,7 @@ void Timerhour::setuptimer()
 } //end setup
 
 //*****************************************Functions**************************//
+
 int Timerhour::timer(struct timeralarmpara &Timervalues)
 {
   timerinterval = Timervalues.timer;

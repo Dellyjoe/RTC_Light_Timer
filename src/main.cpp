@@ -24,6 +24,10 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(0), OLEDflag, HIGH);       // Setting interrupt pin D0
   attachInterrupt(digitalPinToInterrupt(1), SendValuesflag, HIGH); // Setting interrupt pin D1
   Serial.begin(9600);
+
+  pinMode(2, INPUT_PULLUP); // Below is setting alarm funtion
+
+  attachInterrupt(digitalPinToInterrupt(2), alarm_now, LOW); // setting interrupt pin D2
 } //end setup
 //******************************************Main******************************//
 void loop()
