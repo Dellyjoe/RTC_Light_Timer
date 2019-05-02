@@ -8,7 +8,7 @@ Description: This project will be able to display current timer time left, set r
 
 
 Current coding Task to work on
-- [ ] More Struct to timer.h, This is beacuse it is the same funtion. You don't need different funtions to be different files. 
+- [ ] Move Struct to timer.h,beacuse it is the same funtionly (uses timmer para). You don't need different funtions to be in different files. 
 - [ ] Get timerinterval to only turn on relay when Timervalues.clockset is = to current clock time.
     - convert Timervalues.clockset into hour() for comparability 
 - [ ] In sendvaluestimer funtion figure out how to pass both variables to timer funtion 
