@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <potentiometer.h>
+#include <Potentiometer.h>
 //*****************************************Functions**************************//
 int Potentiometer::getpot1()
 {

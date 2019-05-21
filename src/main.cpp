@@ -5,7 +5,7 @@
 // time, the use of pots and buttons to navigate around the OLED display and set
 // time to use for a timer.
 
-#include <potentiometer.h>
+#include <Potentiometer.h>
 #include <OLED_RTC.h>
 #include <timer.h>
 #include <avr/io.h>        // interrupt
