@@ -44,7 +44,10 @@ Hardware:
 Explantion of each funtion and component:
 
 OLED driver:
-- U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
+- U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE), U8g2 by oliver;
+
+RTC Driver:
+- RTClib by Adafruit, "A fork of Jeelab's fantastic RTC library";
 
 
 void OLED(int potvalue); 
